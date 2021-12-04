@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  ThemeProvider,
+  unstable_createMuiStrictModeTheme,
+} from '@mui/material';
 import './index.css';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline } from '@mui/material';
 
+const theme = unstable_createMuiStrictModeTheme();
+
 ReactDOM.render(
   <React.StrictMode>
-    <CssBaseline />
-    <App />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

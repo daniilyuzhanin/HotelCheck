@@ -1,6 +1,5 @@
 import {
   Box,
-  Typography,
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
@@ -8,31 +7,39 @@ import { SignInForm } from 'common/components/SignIn';
 
 const useStyles = makeStyles({
   container: {
-    maxWidth: '500px',
-    margin: '0 auto',
+    width: '100%',
+    height: '100%',
+    position: 'fixed',
+    display: 'flex',
+    justifyContent: 'center', 
   },
-  title: {
-    textAlign: 'center',
+  imgBackground: {
+    position: 'fixed',
+    background: 'no-repeat center/cover url(/image/background.png)',
+    filter: 'blur(7px)',
+    height: '100%',
+    width: '100%',
+    zIndex: '-1',
   },
-  // formContainer: {
-  //   marginTop: theme.spacing(2),
-  //   marginBottom: theme.spacing(2),
-  // },
+  imgOverlay: {
+    width: '100%',
+    height: '100%',
+    background: 'white',
+    opacity: '0.7'
+  },
 });
 
 export const SignInPage = () => {
   const classes = useStyles();
 
-  const { container, title } = classes;
+  const { container, imgBackground, imgOverlay } = classes;
 
   return (
     <Box className={container}>
-      <Typography variant="h3" className={title}>
-        Simple Hotel Check
-      </Typography>
-      <Box>
-        <SignInForm />
+      <Box className={imgBackground}>
+        <Box className={imgOverlay} />
       </Box>
+      <SignInForm />
     </Box>
   );
 };
