@@ -1,15 +1,13 @@
-import { styled } from '@mui/material/styles';
-import { Box, Container} from '@mui/material';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
+import { Box, Paper, Grid, styled } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 import { SearchHotel } from './SearchHotel/SearchHotel';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
-  padding: theme.spacing(1),
+  padding: theme.spacing(4),
   textAlign: 'center',
+  borderRadius: '1rem',
   color: theme.palette.text.secondary,
 }));
 

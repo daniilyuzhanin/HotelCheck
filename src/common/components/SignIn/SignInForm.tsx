@@ -130,6 +130,14 @@ export const SignInForm = () => {
           />
           <Button
             className={button}
+            style={{
+              textTransform: 'none', 
+              fontSize: '1rem',
+              fontStyle: 'normal',
+              fontWeight: 500,
+              lineHeight: '1.5rem',
+              letterSpacing: '0em',
+            }}
             color="primary"
             variant="contained"
             fullWidth
